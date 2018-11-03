@@ -6,7 +6,8 @@ import {
     LOGIN_USER_FAIL
 } from './types';
 import { Actions } from 'react-native-router-flux';
-import firebase from 'firebase';
+import firebase from '@firebase/app'
+import '@firebase/auth'
 
 export const emailChanged = (text) => {
     return({
