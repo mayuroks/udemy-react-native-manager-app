@@ -9,7 +9,7 @@ const RouterComponent = () => {
     return(
         <Router>
             <Scene key="root" hideNavBar>
-                <Scene key="auth">
+                <Scene key="auth" initial>
                     <Scene 
                         key="login" 
                         component={LoginForm} 
@@ -17,20 +17,19 @@ const RouterComponent = () => {
                         // initial={true} // FIXME remove this
                     />    
                 </Scene>
-                <Scene key="main" initial>
+                <Scene key="main">
                     <Scene
                         rightTitle="Add"
                         onRight={() => { Actions.employeeCreate() }}
                         key="employeeList" 
                         component={EmployeeList} 
                         title="Employees"
-                        
+                        initial
                     />
                     <Scene
                         key="employeeCreate" 
                         component={EmployeeCreate} 
                         title="Employee Create"
-                        initial
                     />  
                 </Scene>
             </Scene>
